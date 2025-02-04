@@ -8,6 +8,9 @@ window.addEventListener('popstate', () => {
 
 // Page 'Vandaag'
 async function today() {
+    document.location.href = document.location.href.replace("vandaag", "agenda")
+    return
+
     if (!syncedStorage['start-enabled']) return
 
     let widgetsCollapsedSetting = await getFromStorage('start-widgets-collapsed', 'local') ?? false,
