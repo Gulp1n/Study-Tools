@@ -124,6 +124,11 @@ export default [
                     { settingId: 'magisterLogin-enabled', operator: 'equal', value: true }
                 ],
             },
+            {
+                id: "autoAgenda",
+                title: "automatisch agenda openen",
+                default: false,
+            }
         ]
     },
     {
