@@ -506,7 +506,8 @@ function autoStudyguideSubject(title) {
         { name: "Natuur- en scheikunde", aliases: ["natuur- en scheikunde", "natuur en scheikunde", "natuurkunde en scheikunde", "nask", "ns"] },
         { name: "Spaans", aliases: ["spaans", "sptl", "sp", "es", "spaanse", "español", "espanol"] },
         { name: "Tekenen", aliases: ["tekenen", "teken", "bte", "te"] },
-        { name: "Wiskunde", aliases: ["wiskunde", "wi", "wa", "wb", "wc", "wd", "wis", "wisa", "wisb", "wisc", "wisd", "rekenen", "re"] },
+        { name: "Wiskunde D", aliases: ["wisd", "wd"]},
+        { name: "Wiskunde", aliases: ["wiskunde", "wi", "wa", "wb", "wc", "wis", "wisa", "wisb", "wisc", "rekenen", "re"] },
         { name: "Handarbeid", aliases: ["ha"] }, // Positioned very low to avoid 'ha' being recognised as 'Handarbeid'
         { name: "Duits", aliases: ["duits", "dutl", "du", "de", "duitse", "deutsch"] }, // Positioned very low to avoid 'de' being recognised as 'Duits'
         { name: "Engels", aliases: ["engels", "entl", "en", "engelse", "english"] }, // Positioned very low to avoid 'en' being recognised as 'Engels'
@@ -514,6 +515,12 @@ function autoStudyguideSubject(title) {
         { name: "Loopbaan­oriëntatie en -begeleiding", aliases: ["loopbaan", "lob"] }
     ]
 
+    // lil sketchy but it does the job
+    if(title.toLowerCase().includes("wiskunde d")) {
+        return "wiskunde D"
+    }
+
+    // the way this search algorithm works by (probably) prioritising words based on their possition, so "wiskunde ak" would be defined as "wiskunde" even though ak is higher in the list
     const resultingSubject = subjectMap.find((subjectObject) => title?.split(/\s|-|_|\d/gi)?.some(titleWord => subjectObject.aliases.includes(titleWord.toLowerCase())))
 
     return resultingSubject?.name || 'Geen vak'
