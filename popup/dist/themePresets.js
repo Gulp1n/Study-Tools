@@ -113,7 +113,7 @@ export const
             author: "Gulp1n",
             "ptheme": "light,183,74,35",
             "pagecolor": "true,220,23,95",
-            "custom-css": ":root{--st-background-primary: #ffffffaa; --st-background-secondary: #ffffff00}"
+            "custom-css": ":root{--st-background-primary: #e6e9ef; --st-background-secondary: #dce0e8aa}"
         }
     ],
     propertyKeys = ['ptheme', 'pagecolor', 'wallpaper', 'wallpaper-opacity', 'sidecolor', 'decoration', 'decoration-size', 'appbarcolor', 'shape', 'custom-css', 'custom-css2']
